@@ -62,12 +62,12 @@ public class ActivityViewDetail extends AppCompatActivity implements ViewPagerEx
     private AdapterReview reviewAdapter = null;
     private AdapterDailyMenu adapterDailyMenu = null;
 
-    ProgressDialog progressDialog;
+    private ProgressDialog progressDialog;
 
     private boolean showReview = false;
-    long startTime = 0, loadTime = 0;
+    private long startTime = 0, loadTime = 0;
 
-    Restaurant restaurant = new Restaurant();
+    private Restaurant restaurant = new Restaurant();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
