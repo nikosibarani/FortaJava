@@ -1,11 +1,11 @@
 package com.project.niko.fortajava.Model;
 
+import java.util.Objects;
+
 public class Category {
 
-    private String category_id, category_name;
-
-    public Category() {
-    }
+    private String category_id;
+    private String category_name;
 
     public Category(String category_id, String category_name) {
         this.category_id = category_id;

@@ -8,12 +8,10 @@ import com.squareup.picasso.Picasso;
 
 public class PicassoClient {
 
-    public static void downloadImage(final Context context, final String url, final ImageView img)
-    {
+    public static void downloadImage(final Context context, final String url, final ImageView img) {
         Picasso.with(context)
                 .load(url)
                 .placeholder(R.drawable.no_image_product_detail)
                 .into(img);
     }
-
 }
