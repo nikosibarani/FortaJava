@@ -1,6 +1,6 @@
 package com.project.niko.fortajava.Model;
 
-import java.util.Objects;
+import android.support.annotation.NonNull;
 
 public class Category {
 
@@ -12,6 +12,7 @@ public class Category {
         this.category_name = category_name;
     }
 
+    @NonNull
     public String getCategory_id() {
         return category_id;
     }

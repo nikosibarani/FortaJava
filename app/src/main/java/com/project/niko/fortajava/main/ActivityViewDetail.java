@@ -103,11 +103,11 @@ public class ActivityViewDetail extends AppCompatActivity implements ViewPagerEx
         this.findViewById(R.id.btn_direction).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActivityViewDetail.this, MapsActivity.class);
-                intent.putExtra("originLat", -6.907745);
-                intent.putExtra("originLng", 107.609444);
-                intent.putExtra("restaurant", restaurant);
-                startActivity(intent);
+//                Intent intent = new Intent(ActivityViewDetail.this, MapsActivity.class);
+//                intent.putExtra("originLat", -6.907745);
+//                intent.putExtra("originLng", 107.609444);
+//                intent.putExtra("restaurant", restaurant);
+//                startActivity(intent);
             }
         });
 

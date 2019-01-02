@@ -64,7 +64,6 @@ public class FragmentHome extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(context, SearchActivity.class));
-                Intent intent = new Intent(context, ActivityViewResult.class);
 //                Intent intent = new Intent(context, ActivityViewResult.class);
 //                intent.putExtra("title", "Delivery");
 //                intent.putExtra("key", "category");
@@ -136,7 +135,7 @@ public class FragmentHome extends Fragment {
                     long currentTime = System.currentTimeMillis();
                     System.out.println("Total time home + network: " + (currentTime - ((MainActivity)context).startTime));
                     System.out.println("Total time without network: " + (currentTime - timeWithoutNetwork));
-                    System.out.println("total time : " + less(currentTime, timeWithoutNetwork));
+                    System.out.println("total time : " + operate(currentTime, timeWithoutNetwork));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -144,7 +143,7 @@ public class FragmentHome extends Fragment {
         });
     }
 
-    private Long less(Long x, Long y){
+    private Long operate(Long x, Long y){
         return x - y;
     }
 }
