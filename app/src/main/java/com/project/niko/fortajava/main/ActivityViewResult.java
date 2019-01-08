@@ -27,6 +27,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ActivityViewResult extends AppCompatActivity {
 
@@ -42,7 +43,7 @@ public class ActivityViewResult extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_result);
-        getSupportActionBar().setTitle(getIntent().getStringExtra("title"));
+        Objects.requireNonNull(getSupportActionBar()).setTitle(getIntent().getStringExtra("title"));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initial();
 
@@ -52,12 +53,6 @@ public class ActivityViewResult extends AppCompatActivity {
 
         getRestaurantData(0);
 
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                getRestaurantData(0);
-//            }
-//        }).start();
     }
 
     private void getRestaurantData(final int start) {
@@ -65,7 +60,7 @@ public class ActivityViewResult extends AppCompatActivity {
         params.put("lat", -6.907745);
         params.put("lon", 107.609444);
         params.put("start", start);
-        params.put("category", "1");
+        params.put("category", getIntent().getStringExtra("value"));
 
         progressBar.setVisibility(View.VISIBLE);
 

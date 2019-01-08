@@ -70,11 +70,15 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if(actionId == EditorInfo.IME_ACTION_SEARCH){
-                    adapterRestaurant = new AdapterRestaurant(restaurantList, SearchActivity.this);
-                    rv_res.setAdapter(adapterRestaurant);
+                    if(et_search.getText().toString().isEmpty()){
+                        Toast.makeText(SearchActivity.this, "Keyword pencarian masih kosong", Toast.LENGTH_SHORT).show();
+                    } else {
+                        adapterRestaurant = new AdapterRestaurant(restaurantList, SearchActivity.this);
+                        rv_res.setAdapter(adapterRestaurant);
 
-                    restaurantList.clear();
-                    getRestaurantData(0);
+                        restaurantList.clear();
+                        getRestaurantData(0);
+                    }
                 }
                 return false;
             }
